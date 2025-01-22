@@ -8,7 +8,7 @@ import firebase_admin
 
 # Streamlit secrets
 API_KEY = st.secrets["IMDB_API"]  # Fetch API key from secrets
-FIREBASE_DETAILS = st.secrets["firebase_details"]  # Fetch Firebase details from secrets
+FIREBASE_DETAILS = st.secrets["firebase"]  # Fetch Firebase details from secrets
 
 # Initialize Firebase app if not already initialized
 if not firebase_admin._apps:
