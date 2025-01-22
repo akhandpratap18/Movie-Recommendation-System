@@ -59,7 +59,7 @@ cd movie-recommendation-system
 ### Step 4: Run the Application
 Run the application using the following command:
 ```bash
-python app.py
+streamlit run System.py
 ```
 
 The application will allow users to search for movies, view details, and get genre-based recommendations.
