@@ -1,4 +1,10 @@
-# Python
+# Ignore environment variables file
+.env
+
+# Ignore Firebase credentials file
+firebase_details.json
+
+# Python-related files
 *.pyc
 *.pyo
 __pycache__/
@@ -13,19 +19,6 @@ env/
 ENV/
 .venv/
 
-# Django
-*.log
-*.pot
-*.pyc
-__pycache__/
-db.sqlite3
-
-# Firebase credentials (add your sensitive files here)
-firebase_details.json
-
-# Streamlit
-/.streamlit/
-
 # IDEs and editors
 .vscode/
 .idea/
@@ -36,4 +29,3 @@ Thumbs.db
 
 # Logs
 *.log
-
