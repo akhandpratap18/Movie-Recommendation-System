@@ -1,6 +1,5 @@
-python-dotenv
-Firebase
-TMDb API
-Streamlit
+streamlit
 requests
-json
+python-dotenv
+firebase-admin
+google-cloud-firestore
