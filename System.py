@@ -6,7 +6,7 @@ from firebase_admin import credentials, firestore, initialize_app
 from dotenv import load_dotenv
 import firebase_admin
 # Fetch API Key
-IMDB_API_KEY = st.secrets["api_keys"]["IMDB_API"]
+IMDB_API_KEY = st.secrets["IMDB_API"]["IMDB_API"]
 
 # Extract Firebase credentials
 firebase_secrets = st.secrets["firebase"]
