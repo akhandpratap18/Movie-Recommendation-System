@@ -5,12 +5,39 @@ import streamlit as st
 from firebase_admin import credentials, firestore, initialize_app
 from dotenv import load_dotenv
 import firebase_admin
+# Fetch API Key
+IMDB_API_KEY = st.secrets["api_keys"]["IMDB_API"]
 
-# Streamlit secrets
-API_KEY = st.secrets["IMDB_API"]  # Fetch API key from secrets
-FIREBASE_DETAILS = st.secrets["firebase"]  # Fetch Firebase details from secrets
+# Extract Firebase credentials
+firebase_secrets = st.secrets["firebase"]
 
-# Initialize Firebase app if not already initialized
+# Extract individual Firebase details
+firebase_type = firebase_secrets["type"]
+project_id = firebase_secrets["project_id"]
+private_key_id = firebase_secrets["private_key_id"]
+private_key = firebase_secrets["private_key"]
+client_email = firebase_secrets["client_email"]
+client_id = firebase_secrets["client_id"]
+auth_uri = firebase_secrets["auth_uri"]
+token_uri = firebase_secrets["token_uri"]
+auth_provider_x509_cert_url = firebase_secrets["auth_provider_x509_cert_url"]
+client_x509_cert_url = firebase_secrets["client_x509_cert_url"]
+
+# Create Firebase credentials dictionary
+FIREBASE_DETAILS = {
+    "type": firebase_type,
+    "project_id": project_id,
+    "private_key_id": private_key_id,
+    "private_key": private_key,
+    "client_email": client_email,
+    "client_id": client_id,
+    "auth_uri": auth_uri,
+    "token_uri": token_uri,
+    "auth_provider_x509_cert_url": auth_provider_x509_cert_url,
+    "client_x509_cert_url": client_x509_cert_url,
+}
+
+# Initialize Firebase app
 if not firebase_admin._apps:
     cred = credentials.Certificate(FIREBASE_DETAILS)
     initialize_app(cred)
