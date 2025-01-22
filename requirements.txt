@@ -1,0 +1,6 @@
+python-dotenv
+Firebase
+TMDb API
+Streamlit
+requests
+json
