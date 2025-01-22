@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/movie-recommendation-system.git
+git clone https://github.com/akhandpratap18/movie-recommendation-system.git
 cd movie-recommendation-system
 ```
 
