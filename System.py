@@ -99,16 +99,18 @@ def save_search(user_id, movie_id, movie_title, genres, genre_recommendations):
     })
 
 
-# Function to update excluded movies in Firestore
 def update_excluded_movies(user_id, movie_id):
     user_ref = db.collection("users").document(user_id)
     user_data = user_ref.get().to_dict()
 
-    if not user_data and Excluded_movies:
+    # Check if user data exists and if 'Excluded_movies' field is present
+    if not user_data or "Excluded_movies" not in user_data:
+        # If 'Excluded_movies' doesn't exist, initialize it with an empty list
         user_ref.set({
             "Excluded_movies": []
-        })
+        }, merge=True)  # Use merge=True to avoid overwriting other fields
 
+    # Update the 'Excluded_movies' field with the new movie_id
     user_ref.update({
         "Excluded_movies": firestore.ArrayUnion([movie_id])
     })
