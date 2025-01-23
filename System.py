@@ -104,7 +104,7 @@ def update_excluded_movies(user_id, movie_id):
     user_ref = db.collection("users").document(user_id)
     user_data = user_ref.get().to_dict()
 
-    if not user_data:
+    if not user_data and Excluded_movies:
         user_ref.set({
             "Excluded_movies": []
         })
