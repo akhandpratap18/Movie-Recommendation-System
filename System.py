@@ -88,6 +88,7 @@ def save_search(user_id, movie_id, movie_title, genres, genre_recommendations):
     if not user_data:
         user_ref.set({
             "Searched_movies": [],
+            "Excluded_movies": [],
         })
 
     user_ref.update({
